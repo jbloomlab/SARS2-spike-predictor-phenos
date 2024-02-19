@@ -1,0 +1,41 @@
+# Mapping of phenotype category names, with values being mappings of the
+# CSV file and the phenotypes within.
+phenotype_csvs:
+
+  XBB.1.5 spike pseudovirus DMS:
+    # https://www.biorxiv.org/content/10.1101/2023.11.13.566961v1
+    csv: data/spike_pseudovirus_DMS_XBB.1.5.csv
+    columns:
+      - human sera escape
+      - spike mediated entry
+      - ACE2 binding
+
+  XBB.1.5 RBD yeast-display DMS:
+    # https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1011901
+    # https://jbloomlab.github.io/SARS2-RBD-escape-calc/
+    csv: data/yeast_RBD_DMS_XBB.1.5.csv
+    columns:
+      - ACE2 affinity
+      - RBD expression
+      - escape
+
+  EVEscape:
+    # https://www.nature.com/articles/s41586-023-06617-0
+    csv: data/EVEscape_XBB_single_mutation_predictions.csv
+    columns:
+      - EVEscape
+      - fitness_evol_indices
+      - dissimilarity_charge_hydrophobicity
+      - accessibility_wcn
+
+# Include Hamming distance as a phenotype, both from Wuhan-Hu-1 reference and any `reference_clades`
+include_hamming_distance: true
+
+# Pango clade JSON from https://github.com/corneliusroemer/pango-sequences
+# Indicate a specific commit or just latest version from main
+pango_json: https://raw.githubusercontent.com/corneliusroemer/pango-sequences/main/data/pango-consensus-sequences_summary.json
+
+# Compute phenotypes of clades with respect to these reference clades (Pango clade names)
+reference_clades:
+  - XBB.1.5
+  - BA.2.86
