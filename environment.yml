@@ -12,3 +12,4 @@ dependencies:
   - pandas=2.1
   - papermill=2.4
   - python=3.11
+  - ruamel.yaml=0.18

@@ -39,3 +39,6 @@ pango_json: https://raw.githubusercontent.com/corneliusroemer/pango-sequences/ma
 reference_clades:
   - XBB.1.5
   - BA.2.86
+
+# Number of randomizations of each phenotype
+n_randomizations: 10
