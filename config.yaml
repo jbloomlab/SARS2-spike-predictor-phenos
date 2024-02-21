@@ -1,5 +1,7 @@
 # Mapping of phenotype category names, with values being mappings of the
-# CSV file and the phenotypes within.
+# CSV file and the phenotypes within. Must have columns "site", "wildtype",
+# and "mutant" along with the column specifying the phenotypes indicated below.
+# Sites are Wuhan-Hu-1 reference numbering.
 phenotype_csvs:
 
   XBB.1.5 spike pseudovirus DMS:
@@ -40,5 +42,11 @@ reference_clades:
   - XBB.1.5
   - BA.2.86
 
-# Number of randomizations of each phenotype
+# Number of randomizations of each phenotype. Randomizations are performed by shuffling
+# the mutation phenotype values among mutations.
 n_randomizations: 10
+
+# Output files
+mutation_phenotypes_csv: "results/mutation_phenotypes.csv"
+mutation_phenotypes_randomized_csv: "results/mutation_phenotypes_randomized.csv"
+

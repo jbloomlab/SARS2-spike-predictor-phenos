@@ -6,6 +6,7 @@ channels:
 
 dependencies:
   - altair=5.2
+  - git-lfs
   - jupyterlab
   - numpy
   - openpyxl
