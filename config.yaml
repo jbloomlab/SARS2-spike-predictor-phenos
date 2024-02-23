@@ -37,9 +37,15 @@ include_hamming_distance: true
 # Indicate a specific commit or just latest version from main
 pango_json: https://raw.githubusercontent.com/corneliusroemer/pango-sequences/main/data/pango-consensus-sequences_summary.json
 
-# Compute phenotypes of clades with respect to these reference clades (Pango clade names)
-reference_clades:
+# Compute phenotypes of clades relative to these clade(s)
+compute_relative_to:
   - XBB.1.5
+  - BA.2.86
+
+# Indicate clades that are (not) descendants of each of these parent clades
+classify_descendants_of:
+  - XBB
+  - BA.2
   - BA.2.86
 
 # Number of randomizations of each phenotype. Randomizations are performed by shuffling
@@ -47,6 +53,7 @@ reference_clades:
 n_randomizations: 10
 
 # Output files
-mutation_phenotypes_csv: "results/mutation_phenotypes.csv"
-mutation_phenotypes_randomized_csv: "results/mutation_phenotypes_randomized.csv"
-
+mutation_phenotypes_csv: results/mutation_phenotypes.csv
+mutation_phenotypes_randomized_csv: results/mutation_phenotypes_randomized.csv
+clade_phenotypes_csv: results/clade_phenotypes.csv
+clade_phenotypes_randomized_csv: results/clade_phenotypes.csv
