@@ -48,4 +48,4 @@ n_randomizations: 10
 mutation_phenotypes_csv: results/mutation_phenotypes.csv
 mutation_phenotypes_randomized_csv: results/mutation_phenotypes_randomized.csv
 clade_phenotypes_csv: results/clade_phenotypes.csv
-clade_phenotypes_randomized_csv: results/clade_phenotypes.csv
+clade_phenotypes_randomized_csv: results/clade_phenotypes_randomized.csv
