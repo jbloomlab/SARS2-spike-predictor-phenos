@@ -30,9 +30,6 @@ phenotype_csvs:
       - dissimilarity_charge_hydrophobicity
       - accessibility_wcn
 
-# Include Hamming distance as a phenotype, both from Wuhan-Hu-1 reference and any `reference_clades`
-include_hamming_distance: true
-
 # Pango clade JSON from https://github.com/corneliusroemer/pango-sequences
 # Indicate a specific commit or just latest version from main
 pango_json: https://raw.githubusercontent.com/corneliusroemer/pango-sequences/main/data/pango-consensus-sequences_summary.json
