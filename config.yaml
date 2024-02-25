@@ -26,22 +26,24 @@ mutation_phenotype_csvs:
         csv: data/EVEscape_XBB_single_mutation_predictions.csv
         columns:
           - EVEscape
-          - fitness_evol_indices
-          - dissimilarity_charge_hydrophobicity
-          - accessibility_wcn
 
-# Pango clade JSON from https://github.com/corneliusroemer/pango-sequences
-# Indicate a specific commit or just latest version from main
+# Pango clade definitions from https://github.com/corneliusroemer/pango-sequences
+# Indicate a specific commit or just latest version from main (below is latest version)
 pango_json: https://raw.githubusercontent.com/corneliusroemer/pango-sequences/main/data/pango-consensus-sequences_summary.json
 
-# Indicate clades that are (not) descendants of each of these parent clades
+# Pango clade growth estimates from https://github.com/nextstrain/forecasts-ncov/
+# Indicate a specific date or just latest version (below is latest version)
+pango_growth_json: https://data.nextstrain.org/files/workflows/forecasts-ncov/gisaid/pango_lineages/global/mlr/latest_results.json
+
+# Indicate whether each clade is descendant of each of these parent clades, according definitions in `pango_json`
 classify_descendants_of:
   - XBB
   - BA.2
   - BA.2.86
 
 # Number of randomizations of each phenotype. Randomizations are performed by shuffling
-# the mutation phenotype values among mutations.
+# the mutation phenotype values among mutations. These are useful for evaluating the
+# "significance" of correlations.
 n_randomizations: 10
 
 # Output files
