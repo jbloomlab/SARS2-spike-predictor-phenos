@@ -1,4 +1,4 @@
 .*
 !.gitignore
 
-results
+results/SARS2-spike-predictor-phenos.ipynb

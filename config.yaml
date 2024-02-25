@@ -1,3 +1,5 @@
+# Configuration file for `SARS2-spike-predictor-phenos.ipynb` notebook.
+
 # Mutation effects on phenotypes.
 # Top-level key is the viral clade that the mutation effects are computed relative to.
 # The next key is the phenotype name.
@@ -28,11 +30,15 @@ mutation_phenotype_csvs:
           - EVEscape
 
 # Pango clade definitions from https://github.com/corneliusroemer/pango-sequences
-# Indicate a specific commit or just latest version from main (below is latest version)
+# Indicate a specific commit or just latest version from main. Bbelow is latest version, to
+# specify a specific commit, indicate the same file from GitHub with that commit, as in:
+# https://raw.githubusercontent.com/corneliusroemer/pango-sequences/3201a78cc273ebb7205d853739ad9ff41c032cd5/data/pango-consensus-sequences_summary.json
 pango_json: https://raw.githubusercontent.com/corneliusroemer/pango-sequences/main/data/pango-consensus-sequences_summary.json
 
 # Pango clade growth estimates from https://github.com/nextstrain/forecasts-ncov/
-# Indicate a specific date or just latest version (below is latest version)
+# Indicate a specific date or just latest version. Below specifies the latest version.
+# To specify a specific date, change the `latest` in the file name to the date, as in:
+# https://data.nextstrain.org/files/workflows/forecasts-ncov/gisaid/nextstrain_clades/global/mlr/2024-02-25_results.json
 pango_growth_json: https://data.nextstrain.org/files/workflows/forecasts-ncov/gisaid/pango_lineages/global/mlr/latest_results.json
 
 # Indicate whether each clade is descendant of each of these parent clades, according definitions in `pango_json`
@@ -44,7 +50,7 @@ classify_descendants_of:
 # Number of randomizations of each phenotype. Randomizations are performed by shuffling
 # the mutation phenotype values among mutations. These are useful for evaluating the
 # "significance" of correlations.
-n_randomizations: 10
+n_randomizations: 100
 
 # Output files
 mutation_phenotypes_csv: results/mutation_phenotypes.csv
