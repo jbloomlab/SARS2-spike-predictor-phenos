@@ -10,8 +10,8 @@ mutation_phenotype_csvs:
         csv: data/spike_pseudovirus_DMS_XBB.1.5.csv
         columns:
           - human sera escape
-          - spike mediated entry
           - ACE2 binding
+          - spike mediated entry
       RBD yeast-display DMS:
         # https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1011901
         # https://jbloomlab.github.io/SARS2-RBD-escape-calc/
@@ -37,9 +37,9 @@ pango_growth_json: https://data.nextstrain.org/files/workflows/forecasts-ncov/gi
 
 # Indicate whether each clade is descendant of each of these parent clades, according definitions in `pango_json`
 classify_descendants_of:
+  - BA.2.86
   - XBB
   - BA.2
-  - BA.2.86
 
 # Number of randomizations of each phenotype. Randomizations are performed by shuffling
 # the mutation phenotype values among mutations. These are useful for evaluating the
@@ -51,3 +51,4 @@ mutation_phenotypes_csv: results/mutation_phenotypes.csv
 mutation_phenotypes_randomized_csv: results/mutation_phenotypes_randomized.csv
 clade_phenotypes_csv: results/clade_phenotypes.csv
 clade_phenotypes_randomized_csv: results/clade_phenotypes_randomized.csv
+clade_phenotype_chart: docs/index.html
