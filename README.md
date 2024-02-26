@@ -71,5 +71,5 @@ Thanks to:
      - [Cao et al (2023)](https://www.nature.com/articles/s41586-022-05644-7)
      - [Yisimayi et al (2023)](https://www.nature.com/articles/s41586-023-06753-7)
      - [Greaney et al (2022)](https://academic.oup.com/ve/article/8/1/veac021/6549895)
-  - The Marks lab for the EVEscape values:
+   - The Marks lab for the EVEscape values:
      - [Thadani et al (2023)](https://www.nature.com/articles/s41586-023-06617-0) 
