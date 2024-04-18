@@ -5,6 +5,9 @@ Running the same code on different dates will give the same mutation-level predi
 
 In addition, this CHANGELOG indicates when the code, configuration, or input data on the spike phenotypes are updated.
 
+### Tag `2024-04-18`
+Re-ran with April-18-2024 Pango data
+
 ### Tag `2024-03-04`
 Re-ran with March-4-2024 Pango data.
 
