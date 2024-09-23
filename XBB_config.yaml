@@ -24,6 +24,9 @@ mutation_phenotype_csvs:
           - S2 human sera escape
           - S2 ACE2 binding
           - S2 spike mediated entry
+          - NTD human sera escape
+          - NTD ACE2 binding
+          - NTD spike mediated entry
       RBD yeast-display DMS:
         # https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1011901
         # https://jbloomlab.github.io/SARS2-RBD-escape-calc/
