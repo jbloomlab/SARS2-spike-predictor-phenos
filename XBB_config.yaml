@@ -1,0 +1,71 @@
+# Configuration file for `lineage_phenotypes.ipynb` notebook.
+
+# Mutation effects on phenotypes.
+# Top-level key is the viral lineage that the mutation effects are computed relative to.
+# The next key is the phenotype name.
+# Then the keys are the CSV file with the data and columns with phenotypes within.
+# The CSV must have columns "site", "wildtype", and "mutant."
+mutation_phenotype_csvs:
+  XBB.1.5:
+      spike pseudovirus DMS:
+        # https://www.biorxiv.org/content/10.1101/2023.11.13.566961v1
+        csv_raw: data/spike_pseudovirus_DMS_XBB.1.5.csv
+        columns_raw:
+          - human sera escape
+          - ACE2 binding
+          - spike mediated entry
+        # pivot df of csv_raw by region (S2, RBD, NTD, other)
+        csv: data/pivot_spike_pseudovirus_DMS_XBB.1.5.csv
+          # Define which mutation type to keep (only RBD and S2?)
+        columns:
+          # - RBD human sera escape
+          # - RBD ACE2 binding
+          # - RBD spike mediated entry
+          - Non-RBD human sera escape
+          - Non-RBD ACE2 binding
+          - Non-RBD spike mediated entry
+      RBD yeast-display DMS:
+        # https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1011901
+        # https://jbloomlab.github.io/SARS2-RBD-escape-calc/
+        csv: data/yeast_RBD_DMS_XBB.1.5.csv
+        columns:
+          - ACE2 affinity
+          - RBD expression
+          - escape
+      EVEscape:
+        # https://www.nature.com/articles/s41586-023-06617-0
+        # https://api.evescape.org/download_variant_data?curr-virus=COVID19&curr-variant-or-id=Omicron(XBB)
+        csv: data/EVEscape_XBB_single_mutation_predictions.csv
+        columns:
+          - EVEscape
+
+# Pango lineage definitions from https://github.com/corneliusroemer/pango-sequences
+# Indicate a specific commit or just latest version from main. Bbelow is latest version, to
+# specify a specific commit, indicate the same file from GitHub with that commit, as in:
+# https://raw.githubusercontent.com/corneliusroemer/pango-sequences/3201a78cc273ebb7205d853739ad9ff41c032cd5/data/pango-consensus-sequences_summary.json
+pango_json: https://raw.githubusercontent.com/corneliusroemer/pango-sequences/main/data/pango-consensus-sequences_summary.json
+
+# Pango lineage growth estimates from https://github.com/nextstrain/forecasts-ncov/
+# Indicate a specific date or just latest version. Below specifies the latest version.
+# To specify a specific date, change the `latest` in the file name to the date, as in:
+# https://data.nextstrain.org/files/workflows/forecasts-ncov/gisaid/pango_lineages/global/mlr/2024-02-25_results.json
+pango_growth_json: https://data.nextstrain.org/files/workflows/forecasts-ncov/gisaid/pango_lineages/global/mlr/latest_results.json
+
+# Indicate whether each lineage is descendant of each of these parent clades, according definitions in `pango_json`
+classify_descendants_of:
+  - XBB
+
+# Number of randomizations of each phenotype. Randomizations are performed by shuffling
+# the mutation phenotype values among mutations. These are useful for evaluating the
+# "significance" of correlations.
+n_randomizations: 100
+
+# Intermediate files
+spike_pseudovirus_dms_pivot: data/pivot_spike_pseudovirus_DMS_XBB.1.5.csv
+
+# Output files
+mutation_phenotypes_csv: results/mutation_phenotypes.csv
+mutation_phenotypes_randomized_csv: results/mutation_phenotypes_randomized.csv
+lineage_phenotypes_csv: results/lineage_phenotypes.csv
+lineage_phenotypes_randomized_csv: results/lineage_phenotypes_randomized.csv
+lineage_phenotpyes_chart: docs/index.html
