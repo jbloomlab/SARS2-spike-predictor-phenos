@@ -18,9 +18,9 @@ mutation_phenotype_csvs:
         csv: data/pivot_spike_pseudovirus_DMS_XBB.1.5.csv
           # Define which mutation type to keep (only RBD and S2?)
         columns:
-          - RBD human sera escape
-          - RBD ACE2 binding
-          - RBD spike mediated entry
+          # - RBD human sera escape
+          # - RBD ACE2 binding
+          # - RBD spike mediated entry
           - Non-RBD human sera escape
           - Non-RBD ACE2 binding
           - Non-RBD spike mediated entry
